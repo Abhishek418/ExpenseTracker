@@ -18,7 +18,7 @@ function App() {
         <div>
             <NewExpense onAddExpense={onAddExpenseHandler} />
             <Expenses expenseData={expensesList} />
-            <Card className="expenses">
+            <Card className="expenses-warning">
                 <h3>
                     Please Note: No expenses are saved , once you refresh everything will be lost!. Features like authenctication , saving the
                     expenses to the db , deleting the expenses and much more are in the development.
