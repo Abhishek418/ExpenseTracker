@@ -12,6 +12,9 @@ export default function Expenses(props) {
     const filteredArray = props.expenseData.filter((expense) => {
         return expense.date.getFullYear().toString() === selectedFilter;
     });
+    const filterYears = filteredArray.map((item) => {
+        return item.date.getFullYear();
+    });
 
     return (
         <div>
