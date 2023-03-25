@@ -6,8 +6,9 @@ const ExpenseChart = (props) => {
     const values = props.items.map((item) => {
         return item.amount;
     });
-    const maxValue = Math.max(...values);
-
+    let totalAmount = 0;
+    props.items.forEach((x) => (totalAmount += +x.amount));
+    console.log(totalAmount);
     const chartBarData = [
         { label: "Jan", height: "0%", value: 0 },
         { label: "Feb", height: "0%", value: 0 },
@@ -27,10 +28,9 @@ const ExpenseChart = (props) => {
     props.items.forEach((item) => {
         chartBarData[item.date.getMonth()].value += +item.amount;
     });
-    console.log(chartBarData);
     /* setting height */
     chartBarData.forEach((item) => {
-        item.height = Math.round((item.value / maxValue) * 100) + "%";
+        item.height = Math.round((item.value / totalAmount) * 100) + "%";
     });
     const chartBars = chartBarData.map((item, index) => {
         return <ChartBar height={item.height} label={item.label} key={index} />;

@@ -11,19 +11,19 @@ export default function ExpenseForm(props) {
 
     const titleChangeHandler = (event) => {
         setExpenseForm((prevState) => {
-            return { ...prevState, ["title"]: event.target.value };
+            return { ...prevState, [event.target.name]: event.target.value };
         });
     };
 
     const amountChangeHandler = (event) => {
         setExpenseForm((prevState) => {
-            return { ...prevState, ["amount"]: event.target.value };
+            return { ...prevState, [event.target.name]: event.target.value };
         });
     };
 
     const dateChangeHandler = (event) => {
         setExpenseForm((prevState) => {
-            return { ...prevState, ["date"]: event.target.value };
+            return { ...prevState, [event.target.name]: event.target.value };
         });
     };
 
