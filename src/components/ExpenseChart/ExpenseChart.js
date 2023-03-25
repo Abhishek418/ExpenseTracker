@@ -3,9 +3,6 @@ import "./expenseChart.css";
 import ChartBar from "./ChartBar";
 
 const ExpenseChart = (props) => {
-    const values = props.items.map((item) => {
-        return item.amount;
-    });
     let totalAmount = 0;
     props.items.forEach((x) => (totalAmount += +x.amount));
     console.log(totalAmount);
