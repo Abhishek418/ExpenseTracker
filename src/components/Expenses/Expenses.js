@@ -3,8 +3,9 @@ import Card from "../UI/Card";
 import "./expenses.css";
 import ExpenseFilter from "../ExpenseFilter.js/ExpenseFilter";
 import ExpenseList from "./ExpenseList";
+import ExpenseChart from "../ExpenseChart/ExpenseChart";
 export default function Expenses(props) {
-    const [selectedFilter, setSelectedFilter] = React.useState();
+    const [selectedFilter, setSelectedFilter] = React.useState("2023");
     const onSelectFilterHandler = (selectedOption) => {
         setSelectedFilter(selectedOption);
     };
@@ -16,6 +17,7 @@ export default function Expenses(props) {
         <div>
             <Card className="expenses">
                 <ExpenseFilter onSelectFilter={onSelectFilterHandler} selected={selectedFilter} />
+                {filteredArray.length > 0 && <ExpenseChart items={filteredArray} />}
                 <ExpenseList items={filteredArray} />
             </Card>
         </div>

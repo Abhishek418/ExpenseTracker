@@ -1,10 +1,3 @@
-const expenses = [
-    {
-        id: 1,
-        title: "Insurance",
-        amount: 50,
-        date: new Date(),
-    },
-];
+const expenses = [];
 
 export default expenses;
